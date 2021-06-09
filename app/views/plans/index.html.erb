@@ -1,0 +1,28 @@
+<header>
+  
+</header>
+
+<h1>Tube Bending Calculator</h1>
+<div class="space_upper"></div>
+
+<h1>①Select Condition</h1>
+
+<%# <p>1/4の画面</p> %>
+    <div class="one_fourth">
+        <%= form_with(model: @plan, local: true) do |f| %>
+          <div class = "pulldown first_data col-lg-3 col-md-6 col-sm-6 col-xs-12">
+              <p class="item_new">ベンダー</p>
+              <p class="item_new"><%= f.collection_select(:tool, Tool.all, :id, :angle, {}, {class:"hoge", id:"fuga"}) %></p>
+              <p>&emsp;</p>
+              <p class="item_new">チューブ外径</p>
+              <p class="item_new"><%= f.collection_select(:diameter, Diameter.all, :id, :angle, {}, {class:"hoge", id:"fuga"}) %></p>
+              <p>&emsp;</p>
+              <p class="item_new">シュー材質</p>
+              <p class="item_new"><%= f.collection_select(:shoe, Shoe.all, :id, :angle, {}, {class:"hoge", id:"fuga"}) %></p>
+          </div>         
+
+          <div class = "col-lg-3 col-md-6 col-sm-6 col-xs-12 ">
+            <%= f.submit "次へ" ,class:"link_to_result" %>
+          </div>
+        <% end %>
+    </div>
